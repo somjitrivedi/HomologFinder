@@ -1,0 +1,28 @@
+{
+  "name": "homologfinder",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Sequence alignment and homology search engine: FASTA storage, k-mer indexing, Smith-Waterman alignment.",
+  "type": "module",
+  "engines": {
+    "node": ">=22.18"
+  },
+  "bin": {
+    "homologfinder": "./dist/cli.js"
+  },
+  "scripts": {
+    "cli": "node src/cli.ts",
+    "typecheck": "tsc --noEmit",
+    "build": "tsc -p tsconfig.build.json",
+    "test": "node --test \"test/**/*.test.ts\"",
+    "bench": "node bench/run.ts",
+    "data:swissprot": "node scripts/fetch-swissprot.ts",
+    "data:synth-dna": "node scripts/synth-dna.ts",
+    "data:sample": "node scripts/make-sample.ts",
+    "oracle": "node scripts/oracle.ts"
+  },
+  "devDependencies": {
+    "@types/node": "24.19.2",
+    "typescript": "5.9.3"
+  }
+}
